@@ -15,6 +15,9 @@ DISK_USED=$(df -h --total | grep 'total' | awk '{print $3}')
 DISK_FREE=$(df -h --total | grep 'total' | awk '{print $4}')
 DISK_PERCENT=$(df -h --total | grep 'total' | awk '{print $5}')
 
+# Get top 5 processes by CPU usage
+TOP_CPU_PROCESSES=$(ps -eo pid,comm,%cpu --sort=-%cpu | head -n 6)
+
 # Display results
 echo "===== System Statistics ====="
 echo "Total CPU Usage: $CPU_USAGE"
@@ -30,4 +33,7 @@ echo "Total: $DISK_TOTAL"
 echo "Used: $DISK_USED"
 echo "Free: $DISK_FREE"
 echo "Usage: $DISK_PERCENT"
+echo ""
+echo "Top 5 processes by CPU usage:"
+echo "$TOP_CPU_PROCESSES"
 echo ""
