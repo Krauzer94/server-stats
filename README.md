@@ -1,4 +1,4 @@
-> [Developer Roadmap - DevOps Projects](https://roadmap.sh/projects/server-stats)
+> Developer Roadmap - [DevOps Projects](https://roadmap.sh/projects/server-stats)
 
 # Server Performance Stats
 Goal of this project is to write a script to analyse server performance stats.
