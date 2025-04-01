@@ -18,6 +18,9 @@ DISK_PERCENT=$(df -h --total | grep 'total' | awk '{print $5}')
 # Get top 5 processes by CPU usage
 TOP_CPU_PROCESSES=$(ps -eo pid,comm,%cpu --sort=-%cpu | head -n 6)
 
+# Get top 5 processes by memory usage
+TOP_MEM_PROCESSES=$(ps -eo pid,comm,%mem --sort=-%mem | head -n 6)
+
 # Display results
 echo "===== System Statistics ====="
 echo "Total CPU Usage: $CPU_USAGE"
@@ -36,4 +39,7 @@ echo "Usage: $DISK_PERCENT"
 echo ""
 echo "Top 5 processes by CPU usage:"
 echo "$TOP_CPU_PROCESSES"
+echo ""
+echo "Top 5 processes by Memory usage:"
+echo "$TOP_MEM_PROCESSES"
 echo ""
